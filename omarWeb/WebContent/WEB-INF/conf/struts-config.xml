@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+
+
+	
+	<form-beans>
+
+		<form-bean name="loginForm" type="com.omar.hubino.common.form.LoginForm" />
+		<form-bean name="misForm" type="com.omar.hubino.common.form.MISForm" />
+
+	</form-beans>
+	
+
+	<global-exceptions>
+		<exception key="error.global.mesage" type="java.lang.Exception"
+			path="/pages/home.jsp" />
+	</global-exceptions>
+
+	<global-forwards>
+		<forward name="welcome" path="/homeInit.do?method=homeInit" />
+		<!-- <forward name="invalidAccess" path="/pages/common/error.jsp" />
+		<forward name="logout" path="/logout.do?method=logoutAction" /> -->
+	</global-forwards>
+
+	<action-mappings>
+
+		<action path="/homeInit" type="com.omar.hubino.common.action.InitAction"
+			parameter="method" scope="request" validate="false">
+			<forward name="success" path="/pages/home.jsp" />
+		</action>
+		
+		<action path="/login" type="com.omar.hubino.common.action.LoginAction"
+			parameter="method" scope="request" name="loginForm">
+			<forward name="dashboard" path="/login.do?method=dashboard" />
+			<forward name="success" path="/pages/dashboard.jsp" />
+			<forward name="failure" path="/pages/home.jsp" />
+			<forward name="logout" path="/pages/home.jsp" />
+		</action>
+		
+		<action path="/mis" type="com.omar.hubino.common.action.MISAction"
+			parameter="method" scope="request" name="misForm">
+			<forward name="success" path="/pages/mis.jsp" />
+			<forward name="failure" path="/pages/home.jsp" />
+		</action>
+
+		<action path="/userInfo"
+			type="com.omar.hubino.common.action.UserAction" parameter="method" scope="request"
+			validate="false">
+			<forward name="success" path="/pages/model.jsp" />
+			<forward name="enroll" path="/pages/enroll.jsp" />
+			<forward name="auth" path="/pages/auth.jsp" />
+			<forward name="failure" path="/pages/home.jsp" />
+		</action>
+
+		<action path="/loadImage"
+			type="com.omar.hubino.common.action.LoadImageAction" scope="request"
+			validate="false" />
+
+	</action-mappings>
+
+	<message-resources parameter="java.MessageResources" />
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/org/apache/struts/validator/validator-rules.xml,/WEB-INF/conf/validation.xml" />
+	</plug-in>
+
+</struts-config>

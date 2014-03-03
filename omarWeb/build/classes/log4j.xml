@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+	<appender name="LmsFileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<param name="File" value="C:/odeskspace/ibss_01/log/genesis.log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{hh:mm:ss} %c - %M - %p line %L - %m%n" />
+			<!--
+				<param name="ConversionPattern" value="%d{hh:mm:ss} %-6r [%15.15t]
+				%-5p %40.40c line %L %x - %m%n" />
+			-->
+		</layout>
+	</appender>
+
+	<appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<!--
+				<param name="ConversionPattern" value="%d{hh:mm:ss} %-6r [%t] %-5p
+				%30.30c line %L %x - %m%n" />
+			-->
+			<param name="ConversionPattern" value="%d{hh:mm:ss} %c - %M - %p line %L - %m%n" />
+		</layout>
+	</appender>
+
+	<root>
+		<priority value="info" />
+		<!-- <appender-ref ref="LmsFileAppender" /> -->
+		
+		<appender-ref ref="consoleAppender" />
+		
+	</root>
+</log4j:configuration>

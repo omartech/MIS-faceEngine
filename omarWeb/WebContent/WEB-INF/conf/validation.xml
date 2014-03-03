@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE form-validation PUBLIC
+     "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.3.0//EN"
+     "http://jakarta.apache.org/commons/dtds/validator_1_3_0.dtd">
+
+<form-validation>
+
+	<formset>
+	
+		<form name="loginForm">
+			<field property="userIPN" depends="required,mask">
+				<arg key="ibss.admin.login.username" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9a-zA-Z@]*$</var-value>
+				</var>
+			</field>
+			<field property="password" depends="required,mask">
+				<arg key="ibss.admin.login.password" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9a-zA-Z@%#*$]</var-value>
+				</var>
+			</field>
+			<field property="acceptTerms" depends="required">
+				<arg key="ibss.admin.login.acceptTerms" />
+			</field>	
+	
+		</form>
+		
+		<form name="clientForm">
+			<field property="clientIPN" depends="required,mask">
+				<arg key="ibss.bo.client.id" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9a-zA-Z]*$</var-value>
+				</var>
+			</field>
+			<field property="clientName" depends="required,mask">
+				<arg key="ibss.bo.client.name" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9a-zA-Z ]*$</var-value>
+				</var>
+			</field>
+			<field property="emailId" depends="required,email">
+				<arg key="ibss.bo.client.emailId" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9a-zA-Z.]*$</var-value>
+				</var>
+			</field>
+			<field property="domainName" depends="required,mask">
+				<arg key="ibss.bo.client.domain" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9a-zA-Z].*$</var-value>
+				</var>
+			</field>
+			<field property="ipAddress" depends="required,mask">
+				<arg key="ibss.bo.client.ip" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9].*$</var-value>
+				</var>
+			</field>
+		</form>
+		
+		<form name="userForm">
+			<field property="firstName" depends="required,mask">
+				<arg key="ibss.bo.client.firstName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9a-zA-Z ]*$</var-value>
+				</var>
+			</field>
+			<field property="lastName" depends="required,mask">
+				<arg key="ibss.bo.client.lastName" />
+				<var>
+					<var-name>mask</var-name>
+					<var-value>^[0-9a-zA-Z ]*$</var-value>
+				</var>
+			</field>
+			<field property="dob" depends="required">
+				<arg key="ibss.bo.client.dob" />
+			</field>
+			<field property="registrationStatus" depends="required">
+				<arg key="ibss.bo.client.registrationStatus" />
+			</field>									
+		</form>
+		
+	</formset>
+
+</form-validation>

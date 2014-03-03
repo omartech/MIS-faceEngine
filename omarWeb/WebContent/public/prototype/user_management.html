@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>User Management</title>
+        <meta name="description" content="Page Description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/92bc1fe4.bootstrap.css">
+
+        <!-- Page-specific Plugin CSS: -->
+        <link rel="stylesheet" href="css/select2.css">
+        <link rel="stylesheet" href="css/datatables.css" media="screen">
+        <!-- Proton CSS: -->
+        <link rel="stylesheet" href="css/aaf5c053.proton.css">
+        <link rel="stylesheet" href="css/animate.css">
+        <!-- adds CSS media query support to IE8   -->
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="scripts/vendor/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Fonts CSS: -->
+         <link rel="stylesheet" href="css/6227bbe5.css" type="text/css">
+        <link rel="stylesheet" href="css/40ff7bd7.css" type="text/css">
+		 <link rel="stylesheet" href="css/aaf5c053.css">
+        <!-- Common Scripts: -->
+        <script>
+        (function () {
+          var js;
+          if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
+            js = '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js';
+          } else {
+            js = '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+          }
+          document.write('<script src="' + js + '"><\/script>');
+        }());
+        </script><script src="js/jquery.min.js"></script>
+        <script src="js/modernizr.js"></script>
+        
+		<script>
+		function profile()
+		{
+		
+		document.getElementById("enroll").style.display="block";
+		document.getElementById("profile").style.display="none";
+		document.getElementById("auth").style.display="none";
+		}
+
+		function auth()
+		{
+		
+		document.getElementById("auth").style.display="block";
+		document.getElementById("profile").style.display="none";
+		document.getElementById("enroll").style.display="none";
+		}
+		</script>
+	
+	</head>
+
+    <body>        
+        
+        <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <nav class="main-menu" data-step="2" data-intro="This is the extendable Main Navigation Menu." data-position="right">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="icon-home nav-icon"></i>
+                        <span class="nav-text">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>  
+				
+				  <li>
+                    <a href="user_management.html">
+                        <i class="icon-user nav-icon"></i>
+                        <span class="nav-text">
+                            User Management
+                        </span>
+                    </a>
+                </li>  
+
+				  <li>
+                    <a href="mis.html">
+                        <i class="icon-search nav-icon"></i>
+                        <span class="nav-text">
+                            MIS
+                        </span>
+                    </a>
+                </li>          
+               
+               
+              
+            </ul>
+
+            <ul class="logout">
+                <li>
+                    <a href="index.html">
+                        <i class="icon-off nav-icon"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+        <section class="sidebar extended" style="max-height: none; opacity: 1;">
+            <script>
+                if ($.cookie('protonSidebar') == 'retracted') {
+                    $('.sidebar').removeClass('extended').addClass('retracted');
+                    $('.wrapper').removeClass('retracted').addClass('extended');
+                }
+                if ($.cookie('protonSidebar') == 'extended') {
+                    $('.wrapper').removeClass('extended').addClass('retracted');
+                    $('.sidebar').removeClass('retracted').addClass('extended');
+                }
+            </script>
+            <div class="panel panel-default">
+                 <div class="panel-body" style="background-color:#76b6ec;">
+                    <div class="title">
+                        <i class="icon-search"></i>
+                        <span style="color:white;">
+                            User Management
+                        </span>
+						
+                        <!-- <a href="javascript:;" class="add">
+                            <i class="icon-plus-sign"></i>
+                            <span>
+                                ADD NEW
+                            </span>
+                        </a> -->
+                    </div>
+                    <div class="input-group">
+                        
+
+                        
+                    </div>
+
+                </div>
+                <div class="panel-body tree-body">
+                    <div class="scrollable">
+
+                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            <div class="form-group">
+                                                <label>Search By</label>
+												<div>
+                                                    <input type="text" value="Email" class="datetimepicker-search form-control">
+                                                </div>
+                                              
+                                            </div>
+                                            <div class="form-group">
+                                                  <div>
+                                                    <select class="select2" style="border: 1px solid #E2E2E2;border-radius: 3px;font-family: sans-serif;height: 24px;vertical-align: middle;width: 247px;">
+                                                        <option selected="" value="price">Admin</option>
+                                                        <option value="spread">Super User</option>
+                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+
+											<div class="form-group">
+                                                <div>
+                                                    <label class="checkbox-inline">
+                                                        <input type="radio" value="">
+                                                        Active
+                                                    </label>
+                                                
+                                                
+                                                    <label class="checkbox-inline">
+                                                        <input type="radio" checked="">
+                                                        Inactive
+                                                    </label>
+                                                </div>
+
+
+                                            </div>
+
+											<div class="form-group">
+                                                <div>
+                                                    <input type="text" value="Name" class="datetimepicker-search form-control">
+                                                </div>
+
+											
+                                            </div>
+
+											<div class="list-group-item text-right">
+                                            <button type="button" class="btn btn-sm btn-success close-advanced-search">SEARCH</button>
+                                            <button type="button" class="btn btn-sm btn-default">RESET</button>
+                                        </div>
+										</div>
+                    </div>
+                
+            </div>
+            <div class="sidebar-handle">
+                <i class="icon-caret-right"></i>
+                <i class="icon-caret-left"></i>
+            </div>
+        </section>
+
+        <section class="wrapper retracted scrollable" style="opacity:1;">
+            
+            <script>
+                if (!($('body').is('.dashboard-page') || $('body').is('.login-page'))){
+                    if ($.cookie('protonSidebar') == 'retracted') {
+                        $('.wrapper').removeClass('retracted').addClass('extended');
+                    }
+                    if ($.cookie('protonSidebar') == 'extended') {
+                        $('.wrapper').removeClass('extended').addClass('retracted');
+                    }
+                }
+            </script>  
+			<div id="top" class="panel panel-default panel-block panel-title-block">
+                    <div class="panel-heading">
+                        <div>
+                            <i class="icon-edit"></i>
+                            <h1>
+							<span class="page-title">User Management</span> 
+							 <small>Search Results</small>
+                            </h1>
+                           
+                        </div>
+						<div class="mis_logo" style="float:right;">						
+						<img src="images/footer_logo.png"  style="width:75px;height:50px;"> 
+						</div>
+                    </div>
+
+                </div>          
+            
+            <div class="row">      
+
+
+                  
+                                         <div class="panel panel-default panel-block">
+                    	<div id="data-table" class="panel-heading datatable-heading">
+                            <h4 class="section-title">User Details</h4>
+							<div class="mis_logo" style="float:right;">	
+							<img src="images/plus.png"  style="width:23px;height:23px;"><span style="font-size-adjust: 0.70;margin-left:-7px;"><a data-toggle="modal" href="#quickLaunchModal" class="add-quick-launch">Add User</a></span>
+                    		</div>
+						</div>
+	                    <table class="table table-bordered table-striped" id="tableSortable">
+	                        <thead>
+	                            <tr>
+	                                <th>User ID</th>
+	                                <th>First Name</th>
+									<th>Last Name</th>
+	                                <th>Status</th>
+	                                <th>Email ID</th>
+	                                <th>Roles</th>
+									<th></th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <tr class="gradeX">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">154825</a></td>
+	                                <td>
+	                                    Robert Menachem
+	                                </td>
+									 <td>
+	                                    Steve
+	                                </td>
+	                                <td>Active</td>
+	                                <td class="center">amirmohamed@gmail.com</td>
+									 <td>Admin</td>
+	                                <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeC">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">981882</a></td>
+	                                <td>Fernando doset</td>
+									 <td>waugh</td>
+	                                <td>Active</td>
+	                                <td class="center">fernandodoset@gmail.com</td>
+									<td>Admin</td>
+	                                <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">015245</a></td>
+	                                <td>Sanyueter</td>
+									<td>salim</td>
+	                                <td>Active</td>
+	                                <td class="center">sanyueter@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">524515</a></td>
+	                                <td>Etiem Libero</td>
+									<td>peter</td>
+	                                <td>Active</td>
+	                                <td class="center">etiemlibero@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">241523</a></td>
+	                                <td>Flor Demoa</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">flordmoa@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">152483</a></td>
+	                                <td>Jhon ruster</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">jhonruster@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">158793</a></td>
+	                                <td>jhon sluter</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">jhonsluter@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeC">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">981882</a></td>
+	                                <td>Fernando doset</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">fernandodoset@gmail.com</td>
+									<td>Admin</td>
+	                                <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">015245</a></td>
+	                                <td>Sanyueter</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">sanyueter@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">524515</a></td>
+	                                <td>Etiem Libero</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">etiemlibero@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">241523</a></td>
+	                                <td>Flor Demoa</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">flordmoa@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">152483</a></td>
+	                                <td>Jhon ruster</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">jhonruster@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">158793</a></td>
+	                                <td>jhon sluter</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">jhonsluter@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                             <tr class="gradeC">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">981882</a></td>
+	                                <td>Fernando doset</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">fernandodoset@gmail.com</td>
+									<td>Admin</td>
+	                                <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">015245</a></td>
+	                                <td>Sanyueter</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">sanyueter@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">524515</a></td>
+	                                <td>Etiem Libero</td>
+									<td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">etiemlibero@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            
+	                            <tr class="gradeA">
+	                                <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">158793</a></td>
+	                                <td>jhon sluter</td>
+									  <td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">jhonsluter@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                            <tr class="gradeU">
+	                                 <td><a data-toggle="modal" href="#quickLaunchModal3" class="add-quick-launch">524515</a></td>
+	                                <td>Etiem Libero</td>
+									 <td>Sanyueter</td>
+	                                <td>Active</td>
+	                                <td class="center">etiemlibero@gmail.com</td>
+									<td>Admin</td>
+	                                 <td class="center">										
+											 <i><a data-toggle="modal" href="#quickLaunchModal1" class="add-quick-launch"><img src="images/edit_icon.png"></a></i>&nbsp;&nbsp;&nbsp;&nbsp;
+											  <i><a data-toggle="modal" href="#quickLaunchModal2" class="add-quick-launch"><img src="images/delete_icon.png"></a></i>									
+									</td>
+	                            </tr>
+	                        </tbody>
+	                    </table>
+						
+						
+		            </div>
+                </div>
+            </div>
+			</section>
+
+       <!-- model 1 -->
+         <div aria-hidden="true" style="display: none;" id="quickLaunchModal" tabindex="-1" role="dialog" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title"><i class="icon-plus"></i><span>ADD USER</span></h4>
+                    </div>
+                    <div class="modal-body">
+						<div class="add_form">
+							<div class="form_left">
+								<label>First Name</label>
+							</div>
+							<div class="form_right">
+								 <input type="text" value="" class="datetimepicker-search form-control">
+							</div>
+
+							<div class="form_left">
+								<label>Last Name</label>
+							</div>
+							<div class="form_right">
+								 <input type="text" value="" class="datetimepicker-search form-control">
+							</div>
+
+							<div class="form_left">
+								<label>Email</label>
+							</div>
+							<div class="form_right">
+								 <input type="text" value="" class="datetimepicker-search form-control">
+							</div>
+						</div>                    
+                    </div>
+                    <div class="modal-footer">                      
+                        <button type="button" class="btn btn-lg btn-success">ADD</button>
+						  <button type="button" class="btn btn-lg btn-default" data-dismiss="modal">CANCEL</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+
+		<!-- model 2 -->
+         <div aria-hidden="true" style="display: none;" id="quickLaunchModal1" tabindex="-1" role="dialog" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title"><i class="icon-plus"></i><span>EDIT USER</span></h4>
+                    </div>
+                    <div class="modal-body">
+						<div class="add_form">
+							<div class="form_left">
+								<label>First Name</label>
+							</div>
+							<div class="form_right">
+								 <input type="text" value="" class="datetimepicker-search form-control">
+							</div>
+
+							<div class="form_left">
+								<label>Last Name</label>
+							</div>
+							<div class="form_right">
+								 <input type="text" value="" class="datetimepicker-search form-control">
+							</div>
+
+							<div class="form_left">
+								<label>Email</label>
+							</div>
+							<div class="form_right">
+								 <input type="text" value="" class="datetimepicker-search form-control">
+							</div>
+							<div class="form_left">
+								<label>Roles</label>
+							</div>
+							<div class="form_right">
+							<select class="select2" style="border: 1px solid #E2E2E2;border-radius: 3px;font-family: sans-serif;height: 24px;vertical-align: middle;width: 320px;">
+                                                        <option selected="" value="price">Admin</option>
+                                                        <option value="spread">Super User</option>
+                                                        
+                             </select>
+							</div>
+
+							<div class="form_left" style="margin-top:15px;margin-left:-13px;">
+								<label class="checkbox-inline">
+                                                        <input type="radio" value="">
+                                                        Active
+                                                    </label>
+
+													<label class="checkbox-inline">
+                                                        <input type="radio" value="">
+                                                        Inactive
+                                                    </label>
+							</div>
+							
+						</div>                    
+                    </div>
+                    <div class="modal-footer">                      
+                        <button type="button" class="btn btn-lg btn-success">ADD</button>
+						  <button type="button" class="btn btn-lg btn-default" data-dismiss="modal">CANCEL</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+
+
+<!-- model 3 -->
+         <div aria-hidden="true" style="display: none;" id="quickLaunchModal2" tabindex="-1" role="dialog" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                        <h4 class="modal-title"><i class="icon-plus"></i><span>DELETE USER</span></h4>
+                    </div>
+                    <div class="modal-body">
+						<img src="images/exam_mark.png">						
+                    </div>
+                    <div class="modal-footer">                      
+                        <button type="button" class="btn btn-lg btn-success">DELETE</button>
+						  <button type="button" class="btn btn-lg btn-default" data-dismiss="modal">CANCEL</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+
+
+		<!-- model 4-->
+         <div aria-hidden="true" style="display: none;" id="quickLaunchModal3" tabindex="-1" role="dialog" class="modal fade">
+            <div class="modal-dialog" style="width:750px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                        <h4 class="modal-title"><i class="icon-user"></i><span>USER DETAILS</span></h4>
+                    </div>
+                    <div class="modal-body">
+							<div class="profile_picture" id="profile"><img src="images/omar.png"></div>	
+							<div class="profile_picture" id="enroll" style="display:none;"><span><img src="images/omar.png"></span>&nbsp;<span><img src="images/omar.png"></span>&nbsp;<span><img src="images/omar.png"></span>&nbsp;<span><img src="images/omar.png"></span>&nbsp;<span><img src="images/omar.png"></span></div>
+							<div class="profile_picture" id="auth" style="display:none;">
+							<div class="form_right" style="flaot:right;">
+							Authendication History : <select class="select2" style="border: 1px solid #E2E2E2;border-radius: 3px;font-family: sans-serif;height: 24px;vertical-align: middle;width: 180px;">
+                             <option selected="" value="price">27/02/2013 11:50 AM</option>
+                             <option value="spread">12/01/2013 10:10 AM</option>
+                                                        
+                             </select>
+							 </div><br>
+							<span><img src="images/omar.png"></span>&nbsp;<span><img src="images/omar.png"></span>&nbsp;<span><img src="images/omar.png"></span></div>
+						<div class="add_user">
+							<div class="user_left">
+								<label><b>User ID</b></label>&nbsp;:
+							</div>
+							<div class="user_right">
+								154825
+							</div>
+						
+							<div class="user_left">
+								<label><b>Enrollment Status</b></label>&nbsp;:
+							</div>
+							<div class="user_right">
+								Approved
+							</div>
+
+							<div class="user_left">
+								<label><b>Number of Attempts</b></label>&nbsp;:
+							</div>
+							<div class="user_right">
+								28
+							</div>
+
+							<div class="user_left">
+								<label><b>Last login status</b></label>&nbsp;:
+							</div>
+							<div class="user_right">
+								12/05/2014 15:55 AM
+							</div>
+						
+
+						</div>
+							
+						
+                    </div>
+                    <div class="modal-footer">                      
+                        <button type="button" class="btn btn-lg btn-success" onclick="profile();">View Enrollment Images</button>
+						  <button type="button" class="btn btn-lg btn-default" onclick="auth();">View Authentication Images</button>
+						  		
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        <script src="js/e1d08589.bootstrap.min.js"></script>
+
+		<!-- Proton base scripts: -->
+        <script src="js/9f7a46ed.proton.js"></script>
+
+
+        <!-- Page-specific scripts: -->
+        <script src="js/ba45a7b8.sidebar.js"></script>
+        <script src="js/5558cd34.tables.js"></script>
+        <!-- jsTree -->
+  
+        <!-- Data Tables -->
+        <!-- http://datatables.net/ -->
+            <script src="js/jquery.dataTables.min.js"></script>
+        
+        <!-- Data Tables for BS3 -->
+        <!-- https://github.com/Jowin/Datatables-Bootstrap3/ -->
+        <!-- NOTE: Original JS file is modified -->
+            <script src="js/datatables.js"></script>
+        <!-- Select2 Required To Style Datatable Select Box(es) -->
+        <!-- https://github.com/fk/select2-bootstrap-css -->
+            <script src="js/select2.min.js"></script>
+      
+
+</body></html>

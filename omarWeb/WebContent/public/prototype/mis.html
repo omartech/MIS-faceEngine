@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <title>MIS</title>
+        <meta name="description" content="Page Description">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/92bc1fe4.bootstrap.css">
+
+        <!-- Page-specific Plugin CSS: -->
+        <link rel="stylesheet" href="css/select2.css">
+        <link rel="stylesheet" href="css/datatables.css" media="screen">
+        <!-- Proton CSS: -->
+        <link rel="stylesheet" href="css/aaf5c053.proton.css">
+        <link rel="stylesheet" href="css/animate.css">
+		 <link rel="stylesheet" href="css/aaf5c053.css">
+        <!-- adds CSS media query support to IE8   -->
+        <!--[if lt IE 9]>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+            <script src="scripts/vendor/respond.min.js"></script>
+        <![endif]-->
+
+        <!-- Fonts CSS: -->
+         <link rel="stylesheet" href="css/6227bbe5.css" type="text/css">
+        <link rel="stylesheet" href="css/40ff7bd7.css" type="text/css">
+        <!-- Common Scripts: -->
+        <script>
+        (function () {
+          var js;
+          if (typeof JSON !== 'undefined' && 'querySelector' in document && 'addEventListener' in window) {
+            js = '//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js';
+          } else {
+            js = '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
+          }
+          document.write('<script src="' + js + '"><\/script>');
+        }());
+        </script><script src="js/jquery.min.js"></script>
+        <script src="js/modernizr.js"></script>
+        
+	
+	
+	</head>
+
+    <body>        
+        
+        <!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <nav class="main-menu" data-step="2" data-intro="This is the extendable Main Navigation Menu." data-position="right">
+            <ul>
+                <li>
+                    <a href="dashboard.html">
+                        <i class="icon-home nav-icon"></i>
+                        <span class="nav-text">
+                            Dashboard
+                        </span>
+                    </a>
+                </li>  
+				
+				  <li>
+                    <a href="user_management.html">
+                        <i class="icon-user nav-icon"></i>
+                        <span class="nav-text">
+                            User Management
+                        </span>
+                    </a>
+                </li>  
+
+				  <li>
+                    <a href="mis.html">
+                        <i class="icon-search nav-icon"></i>
+                        <span class="nav-text">
+                            MIS
+                        </span>
+                    </a>
+                </li>          
+               
+               
+              
+            </ul>
+
+            <ul class="logout">
+                <li>
+                    <a href="index.html">
+                        <i class="icon-off nav-icon"></i>
+                        <span class="nav-text">
+                            Logout
+                        </span>
+                    </a>
+                </li>  
+            </ul>
+        </nav>
+        <section class="sidebar extended" style="max-height: none; opacity: 1;">
+            <script>
+                if ($.cookie('protonSidebar') == 'retracted') {
+                    $('.sidebar').removeClass('extended').addClass('retracted');
+                    $('.wrapper').removeClass('retracted').addClass('extended');
+                }
+                if ($.cookie('protonSidebar') == 'extended') {
+                    $('.wrapper').removeClass('extended').addClass('retracted');
+                    $('.sidebar').removeClass('retracted').addClass('extended');
+                }
+            </script>
+            <div class="panel panel-default">
+                 <div class="panel-body" style="background-color:#76b6ec;">
+                    <div class="title">
+                        <i class="icon-search"></i>
+                        <span style="color:white;">
+                            MIS 
+                        </span>
+                        <!-- <a href="javascript:;" class="add">
+                            <i class="icon-plus-sign"></i>
+                            <span>
+                                ADD NEW
+                            </span>
+                        </a> -->
+                    </div>
+                    <div class="input-group">
+                        
+
+                        
+                    </div>
+
+                </div>
+                <div class="panel-body tree-body">
+                    <div class="scrollable">
+
+                    <div class="list-group">
+                                        <div class="list-group-item">
+                                            
+                                                
+                                               <div class="form-group">
+                                                <label>Search By</label>
+												<div>
+                                                    <input type="text" value="User ID" class="datetimepicker-search form-control">
+                                                </div>
+                                              
+                                            </div>
+                                            
+                                            <div class="form-group">
+                                                <label><i class="icon-exchange"></i> From Date & time</label>
+                                                <div>
+                                                    <input type="text" value="2012-05-15 21:05" class="datetimepicker-search form-control">
+
+                                                </div>
+												<div class="form-group">
+                                                <label><i class="icon-exchange"></i> To Date & time</label>
+                                                <div>
+                                                    <input type="text" value="2012-05-15 21:05" class="datetimepicker-search form-control">
+
+                                                </div>
+                                            </div>
+
+											<div class="form-group">
+                                                <div>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" value="">
+                                                        Success
+                                                    </label>
+                                                
+                                                
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" checked="">
+                                                        Failure
+                                                    </label>
+                                                </div>
+
+
+                                            </div>
+
+											<div class="form-group">
+                                                <div>
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" value="">
+                                                        Enrolled
+                                                    </label>
+                                                
+                                                
+                                                    <label class="checkbox-inline">
+                                                        <input type="checkbox" checked="">
+                                                        Not Enrolled
+                                                    </label>
+                                                </div>
+
+											
+                                            </div>
+
+											<div class="list-group-item text-right">
+                                            <button type="button" class="btn btn-sm btn-success close-advanced-search">Search</button>
+                                            <button type="button" class="btn btn-sm btn-default">RESET</button>
+                                        </div>
+										</div>
+                    </div>
+                
+            </div>
+            <div class="sidebar-handle">
+                <i class="icon-caret-right"></i>
+                <i class="icon-caret-left"></i>
+            </div>
+        </section>
+
+        <section class="wrapper retracted scrollable" style="opacity:1;">
+            
+            <script>
+                if (!($('body').is('.dashboard-page') || $('body').is('.login-page'))){
+                    if ($.cookie('protonSidebar') == 'retracted') {
+                        $('.wrapper').removeClass('retracted').addClass('extended');
+                    }
+                    if ($.cookie('protonSidebar') == 'extended') {
+                        $('.wrapper').removeClass('extended').addClass('retracted');
+                    }
+                }
+            </script>  
+			<div id="top" class="panel panel-default panel-block panel-title-block">
+                    <div class="panel-heading">
+                        <div>
+                            <i class="icon-edit"></i>
+                            <h1>
+							<span class="page-title">MIS</span> 
+							 <small>Search Results</small>
+                            </h1>
+                           
+                        </div>
+						<div class="mis_logo" style="float:right;">
+						<img src="images/footer_logo.png"  style="width:75px;height:50px;">
+						</div>
+                    </div>
+
+                </div>          
+            
+            <div class="row">      
+
+
+                  
+                                         <div class="panel panel-default panel-block">
+                    	<div id="data-table" class="panel-heading datatable-heading">
+                            <h4 class="section-title">User Details</h4>
+                    	</div>
+	                    <table class="table table-bordered table-striped" id="tableSortable">
+	                        <thead>
+	                            <tr>
+	                                <th>User ID</th>
+	                                <th>Status</th>
+	                                <th>Enrollment Path</th>
+	                                <th>Enrollment Status</th>
+	                                <th>Date & Time</th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+	                            <tr class="gradeX">
+	                                <td>152458</td>
+	                                <td>
+	                                    Active
+	                                </td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeC">
+	                                <td>981882</td>
+	                                <td>Inctive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125486</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>987569</td>
+	                                <td>Inctive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152364</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>758969</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125635</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152536</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125486</td>
+	                                <td>Inctive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>987569</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152364</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>758969</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125635</td>
+	                                <td>Inctive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152536</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125486</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>987569</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152364</td>
+	                                <td>Inactive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>758969</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125635</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152536</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125486</td>
+	                                <td>Inctive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>987569</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152364</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>758969</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125635</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152536</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125486</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>987569</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152364</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>758969</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125635</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152536</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125486</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>987569</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152364</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>758969</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125635</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152536</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125486</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>987569</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152364</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>758969</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>125635</td>
+	                                <td>Active</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>152536</td>
+	                                <td>InActive</td>
+	                                <td>\doc\file\img</td>
+	                                <td class="center">Not Enrolled</td>
+	                                <td class="center">12/02/2012 5:10PM</td>
+	                            </tr>
+	                            
+	                            <tr class="gradeX">
+	                                <td>Tasman</td>
+	                                <td>Internet Explorer 4.5</td>
+	                                <td>Mac OS 8-9</td>
+	                                <td class="center">-</td>
+	                                <td class="center">X</td>
+	                            </tr>
+	                            <tr class="gradeC">
+	                                <td>Tasman</td>
+	                                <td>Internet Explorer 5.1</td>
+	                                <td>Mac OS 7.6-9</td>
+	                                <td class="center">1</td>
+	                                <td class="center">C</td>
+	                            </tr>
+	                            <tr class="gradeC">
+	                                <td>Tasman</td>
+	                                <td>Internet Explorer 5.2</td>
+	                                <td>Mac OS 8-X</td>
+	                                <td class="center">1</td>
+	                                <td class="center">C</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>Misc</td>
+	                                <td>NetFront 3.1</td>
+	                                <td>Embedded devices</td>
+	                                <td class="center">-</td>
+	                                <td class="center">C</td>
+	                            </tr>
+	                            <tr class="gradeA">
+	                                <td>Misc</td>
+	                                <td>NetFront 3.4</td>
+	                                <td>Embedded devices</td>
+	                                <td class="center">-</td>
+	                                <td class="center">A</td>
+	                            </tr>
+	                            <tr class="gradeX">
+	                                <td>Misc</td>
+	                                <td>Dillo 0.8</td>
+	                                <td>Embedded devices</td>
+	                                <td class="center">-</td>
+	                                <td class="center">X</td>
+	                            </tr>
+	                            <tr class="gradeX">
+	                                <td>Misc</td>
+	                                <td>Links</td>
+	                                <td>Text only</td>
+	                                <td class="center">-</td>
+	                                <td class="center">X</td>
+	                            </tr>
+	                            <tr class="gradeX">
+	                                <td>Misc</td>
+	                                <td>Lynx</td>
+	                                <td>Text only</td>
+	                                <td class="center">-</td>
+	                                <td class="center">X</td>
+	                            </tr>
+	                            <tr class="gradeC">
+	                                <td>Misc</td>
+	                                <td>IE Mobile</td>
+	                                <td>Windows Mobile 6</td>
+	                                <td class="center">-</td>
+	                                <td class="center">C</td>
+	                            </tr>
+	                            <tr class="gradeC">
+	                                <td>Misc</td>
+	                                <td>PSP browser</td>
+	                                <td>PSP</td>
+	                                <td class="center">-</td>
+	                                <td class="center">C</td>
+	                            </tr>
+	                            <tr class="gradeU">
+	                                <td>Other browsers</td>
+	                                <td>All others</td>
+	                                <td>-</td>
+	                                <td class="center">-</td>
+	                                <td class="center">U</td>
+	                            </tr>
+	                        </tbody>
+	                    </table>
+		            </div>
+                </div>
+            </div>
+			</section>
+
+			
+        
+
+        
+        <script src="js/e1d08589.bootstrap.min.js"></script>
+
+		<!-- Proton base scripts: -->
+        <script src="js/9f7a46ed.proton.js"></script>
+
+
+        <!-- Page-specific scripts: -->
+        <script src="js/ba45a7b8.sidebar.js"></script>
+        <script src="js/5558cd34.tables.js"></script>
+        <!-- jsTree -->
+  
+        <!-- Data Tables -->
+        <!-- http://datatables.net/ -->
+            <script src="js/jquery.dataTables.min.js"></script>
+        
+        <!-- Data Tables for BS3 -->
+        <!-- https://github.com/Jowin/Datatables-Bootstrap3/ -->
+        <!-- NOTE: Original JS file is modified -->
+            <script src="js/datatables.js"></script>
+        <!-- Select2 Required To Style Datatable Select Box(es) -->
+        <!-- https://github.com/fk/select2-bootstrap-css -->
+            <script src="js/select2.min.js"></script>
+      
+
+</body></html>
